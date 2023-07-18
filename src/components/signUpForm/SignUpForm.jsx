@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { createAuthUserWithEmailAndPassword } from "../../utils/firebase/firebaseUtils";
+import {
+  createAuthUserWithEmailAndPassword,
+  createUserDocumentFromAuth,
+} from "../../utils/firebase/firebaseUtils";
+
+import FormInput from "../formInput/FormInput";
+import Button from "../button/Button";
+import "./sign-up-form.scss";
 
 const defaultFormFields = {
   displayName: "",
@@ -11,6 +18,7 @@ export default function SignUpForm() {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
+  const resetFormFields = () => setFormFields(defaultFormFields);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormFields((prev) => ({ ...prev, [name]: value }));
@@ -25,19 +33,28 @@ export default function SignUpForm() {
     }
 
     try {
-      const user = await createAuthUserWithEmailAndPassword(email, password);
-      console.log(user);
+      const { user } = await createAuthUserWithEmailAndPassword(
+        email,
+        password
+      );
+
+      await createUserDocumentFromAuth(user, displayName);
+      resetFormFields();
     } catch (err) {
+      if (err.code === "auth/email-already-in-use") {
+        alert("Cannot create user, email already in use");
+      }
       console.log("sing up email error", err);
     }
   };
 
   return (
-    <div>
-      <h1>Sign up with email</h1>
+    <div className="sign-up-container">
+      <h2>Don't have an account?</h2>
+      <span>Sign up with your email</span>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="displayName">Username</label>
-        <input
+        <FormInput
+          label="Username"
           type="text"
           id="displayName"
           name="displayName"
@@ -45,8 +62,8 @@ export default function SignUpForm() {
           onChange={handleChange}
           required
         />
-        <label htmlFor="email">Email</label>
-        <input
+        <FormInput
+          label="Email"
           type="email"
           id="email"
           name="email"
@@ -54,8 +71,8 @@ export default function SignUpForm() {
           onChange={handleChange}
           required
         />
-        <label htmlFor="password">Password</label>
-        <input
+        <FormInput
+          label="Password"
           type="password"
           id="password"
           name="password"
@@ -63,8 +80,8 @@ export default function SignUpForm() {
           onChange={handleChange}
           required
         />
-        <label htmlFor="confirmPassword">Confirm password</label>
-        <input
+        <FormInput
+          label="Confirm password"
           type="password"
           id="confirmPassword"
           name="confirmPassword"
@@ -72,7 +89,7 @@ export default function SignUpForm() {
           onChange={handleChange}
           required
         />
-        <button type="submit">Sign up</button>
+        <Button type="submit">Sign up</Button>
       </form>
     </div>
   );
