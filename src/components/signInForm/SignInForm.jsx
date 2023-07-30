@@ -9,6 +9,7 @@ import {
 
 import FormInput from "../formInput/FormInput";
 import Button from "../button/Button";
+
 import "./sign-in-form.scss";
 
 const defaultFormFields = {
@@ -29,11 +30,8 @@ export default function SignInForm() {
     e.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
-      console.log(response);
+      await signInAuthUserWithEmailAndPassword(email, password);
+      resetFormFields();
     } catch (err) {
       if (err.code === "auth/wrong-password") alert("Incorrect password");
       else if (err.code === "auth/user-not-found")

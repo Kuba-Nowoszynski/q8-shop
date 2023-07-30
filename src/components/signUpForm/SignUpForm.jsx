@@ -6,6 +6,7 @@ import {
 
 import FormInput from "../formInput/FormInput";
 import Button from "../button/Button";
+
 import "./sign-up-form.scss";
 
 const defaultFormFields = {
@@ -37,7 +38,6 @@ export default function SignUpForm() {
         email,
         password
       );
-
       await createUserDocumentFromAuth(user, displayName);
       resetFormFields();
     } catch (err) {
@@ -50,7 +50,7 @@ export default function SignUpForm() {
 
   return (
     <div className="sign-up-container">
-      <h2>Don't have an account?</h2>
+      <h2>Don&apos;t have an account?</h2>
       <span>Sign up with your email</span>
       <form onSubmit={handleSubmit}>
         <FormInput
