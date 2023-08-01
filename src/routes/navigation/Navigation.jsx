@@ -35,9 +35,9 @@ export default function Navigation() {
               Sign In
             </Link>
           )}
-          <CartIcon/>
+          <CartIcon />
         </div>
-        {isCartOpen && <CartDropdown/>}
+        {isCartOpen && <CartDropdown />}
       </div>
       <Outlet />
     </>
