@@ -2,6 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  background: white !important;
+  width: auto;
+  z-index: 99;
 
   .logo-container {
     .logo {

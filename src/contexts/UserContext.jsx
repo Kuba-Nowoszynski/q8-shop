@@ -8,7 +8,10 @@ import { onAuthStateChangedListener } from "../utils/firebase/firebaseUtils";
 //   setCurrentUser: () => null,
 // });
 
-export const UserContext = createContext(null);
+export const UserContext = createContext({
+  currentUser: null,
+  setCurrentUser: () => null,
+});
 
 export const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
