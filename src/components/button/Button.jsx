@@ -1,17 +1,20 @@
-import "./button.scss";
+/* eslint-disable react-refresh/only-export-components */
 
-const buttonTypeClasses = {
-  google: "google-sign-in",
-  inverted: "inverted",
+import {
+  BaseButton,
+  GoogleSignInButton,
+  InvertedButton,
+} from "./button-styles";
+
+export const buttonTypeClasses = {
+  base: BaseButton,
+  google: GoogleSignInButton,
+  inverted: InvertedButton,
 };
 
-export default function Button({ children, buttonType, ...otherProps }) {
-  return (
-    <button
-      className={`button-container ${buttonTypeClasses[buttonType]}`}
-      {...otherProps}
-    >
-      {children}
-    </button>
-  );
-}
+const Button = ({ children, buttonType = BaseButton, ...otherProps }) => {
+  const CustomButton = buttonType;
+  return <CustomButton {...otherProps}>{children}</CustomButton>;
+};
+
+export default Button;

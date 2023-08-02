@@ -8,8 +8,8 @@ import {
 } from "../../utils/firebase/firebaseUtils";
 
 import FormInput from "../formInput/FormInput";
+import { buttonTypeClasses } from "../button/Button";
 import Button from "../button/Button";
-
 import "./sign-in-form.scss";
 
 const defaultFormFields = {
@@ -78,7 +78,7 @@ export default function SignInForm() {
           <Button
             onClick={signInWithGoogleRedirect}
             type="button"
-            buttonType="google"
+            buttonType={buttonTypeClasses.google}
           >
             Google sign in
           </Button>
