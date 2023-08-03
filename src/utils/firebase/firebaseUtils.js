@@ -10,7 +10,6 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { getAnalytics } from "firebase/analytics";
 import {
   getFirestore,
   doc,
@@ -38,7 +37,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
 const googleProvider = new GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: "select_account" });
 
