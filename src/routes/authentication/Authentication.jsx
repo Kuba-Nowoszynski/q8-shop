@@ -5,7 +5,7 @@
 //   createUserDocumentFromAuth,
 // } from "../../utils/firebase/firebaseUtils";
 
-import SignUpForm from "../../components/signUpForm/signUpForm";
+import SignUpForm from "../../components/signUpForm/SignUpForm";
 import SignInForm from "../../components/signInForm/SignInForm";
 import "./authentication.scss";
 
