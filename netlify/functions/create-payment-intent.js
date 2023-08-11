@@ -3,10 +3,10 @@
 // const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
 //import.meta.env.VITE_PUBLISHABLE_KEY
-require("dotenv").config();
+// require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-exports.handler = async (event) => {
+export const handler = async (event) => {
   try {
     console.log("inside handler");
     const { amount } = JSON.parse(event.body);
