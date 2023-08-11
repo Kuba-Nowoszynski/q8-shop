@@ -1,10 +1,10 @@
-// import "dotenv/config";
-// import Stripe from "stripe";
-// const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+import "dotenv/config";
+import Stripe from "stripe";
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
 //import.meta.env.VITE_PUBLISHABLE_KEY
 // require("dotenv").config();
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+// const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 export const handler = async (event) => {
   try {
