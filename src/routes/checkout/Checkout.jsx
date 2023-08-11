@@ -1,8 +1,9 @@
 import { useContext } from "react";
 
 import { CartContext } from "../../contexts/CartContext";
-
 import CheckoutItem from "../../components/checkoutItem/CheckoutItem";
+import PaymentForm from "../../components/paymentForm/PaymentForm";
+
 import "./checkout.scss";
 
 export default function Checkout() {
@@ -30,6 +31,7 @@ export default function Checkout() {
         <CheckoutItem key={item.id} cartItem={item} />
       ))}
       <span className="total">Total: ${totalPrice}</span>
+      <PaymentForm />
     </div>
   );
 }
