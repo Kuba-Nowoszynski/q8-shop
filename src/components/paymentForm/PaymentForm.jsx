@@ -20,16 +20,13 @@ export default function PaymentForm() {
       return;
     }
     setIsProcessingPayment(true);
-    const response = await fetch(
-      "https://q8-shop.netlify.app/.netlify/functions/create-payment-intent",
-      {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ amount: amount * 100 }),
-      }
-    ).then((res) => {
+    const response = await fetch("/.netlify/functions/create-payment-intent", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ amount: amount * 100 }),
+    }).then((res) => {
       return res.json();
     });
 

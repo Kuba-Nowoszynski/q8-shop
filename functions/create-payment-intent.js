@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import "dotenv/config";
 import Stripe from "stripe";
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
@@ -6,7 +7,7 @@ const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 // require("dotenv").config();
 // const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-export const handler = async (event) => {
+exports.handler = async (event) => {
   try {
     console.log("inside handler");
     const { amount } = JSON.parse(event.body);
