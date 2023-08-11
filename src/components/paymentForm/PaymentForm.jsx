@@ -21,7 +21,7 @@ export default function PaymentForm() {
     }
     setIsProcessingPayment(true);
     const response = await fetch(
-      "https://netlifytestserverless.netlify.app/.netlify/functions/create-payment-intent",
+      "https://q8-shop.netlify.app/.netlify/functions/create-payment-intent",
       {
         method: "post",
         headers: {
