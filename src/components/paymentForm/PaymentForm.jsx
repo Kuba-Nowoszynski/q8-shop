@@ -16,16 +16,22 @@ export default function PaymentForm() {
 
   const paymentHandler = async (e) => {
     e.preventDefault();
-    if (!stripe || !elements) return;
+    if (!stripe || !elements) {
+      return;
+    }
     setIsProcessingPayment(true);
     const response = await fetch("/.netlify/functions/create-payment-intent", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ amount: amount * 100 }), //in cents
-    }).then((res) => res.json());
+      body: JSON.stringify({ amount: amount * 100 }),
+    }).then((res) => {
+      return res.json();
+    });
+
     const clientSecret = response.paymentIntent.client_secret;
+
     const paymentResult = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
         card: elements.getElement(CardElement),
@@ -37,13 +43,13 @@ export default function PaymentForm() {
 
     setIsProcessingPayment(false);
 
-    if (paymentResult.paymentIntent.status === "succeeded")
-      alert("Payment Successful");
-    else if (paymentResult.error) alert(paymentResult.error);
-    else
-      alert(
-        "An unknown error has ocurred. Please contact support for further information"
-      );
+    if (paymentResult.error) {
+      alert(paymentResult.error.message);
+    } else {
+      if (paymentResult.paymentIntent.status === "succeeded") {
+        alert("Payment Successful!");
+      }
+    }
   };
 
   return (
