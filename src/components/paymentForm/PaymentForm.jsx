@@ -26,7 +26,6 @@ export default function PaymentForm() {
       body: JSON.stringify({ amount: amount * 100 }), //in cents
     }).then((res) => res.json());
     const clientSecret = response.paymentIntent.client_secret;
-    console.log("update");
     const paymentResult = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
         card: elements.getElement(CardElement),
