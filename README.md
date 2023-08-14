@@ -3,9 +3,10 @@
 Welcome to Q8 Shop, where shopping becomes a delightful experience. This shop comes equipped with seamless login authentication powered by Firebase and secure payment management through Stripe. Built with the latest technologies, including React-DOM, Firebase, Stripe, Sass, Styled Components, and serverless functions, this shop offers a modern and user-friendly shopping environment.
 
 ## Overview
-![image](https://github.com/Kuba-Nowoszynski/q8-shop/assets/117540841/9deeb404-7762-4ad5-bcf1-f3a584c99262)
-![image](https://github.com/Kuba-Nowoszynski/q8-shop/assets/117540841/aed6bc6e-8c60-452b-8b0b-be94839c3088)
-![image](https://github.com/Kuba-Nowoszynski/q8-shop/assets/117540841/9492eccf-0e04-4dd9-8397-957db9f836e0)
+![image](https://github.com/Kuba-Nowoszynski/q8-shop/assets/117540841/5077082d-3887-4695-839d-ee1251418ea1)
+![image](https://github.com/Kuba-Nowoszynski/q8-shop/assets/117540841/b6c59b92-0e44-4b93-a678-57285af76a60)
+![image](https://github.com/Kuba-Nowoszynski/q8-shop/assets/117540841/d7265909-46d5-447a-83d4-820f2e6a5932)
+
 
 
 ### Built With
