@@ -1,6 +1,6 @@
 # E-commerce Shop
 
-Welcome to our E-commerce Shop, where shopping becomes a delightful experience. Our shop comes equipped with seamless login authentication powered by Firebase and secure payment management through Stripe. Built with the latest technologies, including React-DOM, Firebase, Stripe, Sass, Styled Components, and serverless functions, this shop offers a modern and user-friendly shopping environment.
+Welcome to Q8 Shop, where shopping becomes a delightful experience. This shop comes equipped with seamless login authentication powered by Firebase and secure payment management through Stripe. Built with the latest technologies, including React-DOM, Firebase, Stripe, Sass, Styled Components, and serverless functions, this shop offers a modern and user-friendly shopping environment.
 
 ## Overview
 ![image](https://github.com/Kuba-Nowoszynski/q8-shop/assets/117540841/9deeb404-7762-4ad5-bcf1-f3a584c99262)
@@ -20,12 +20,12 @@ This E-commerce Shop was carefully crafted using the following technologies:
 ## Features
 - User Accounts: Create and manage your account using Firebase authentication.
 - Secure Payments: Experience worry-free shopping with Stripe's reliable payment processing.
-- Intuitive UI: Navigate the shop effortlessly with our user-friendly interface.
+- Intuitive UI: Navigate the shop effortlessly with user-friendly interface.
 - Stylish Design: Enjoy a visually appealing design created with Sass and Styled Components.
 - Scalable Backend: Utilize serverless functions for efficient and scalable backend operations.
 
 ## How To Shop
-Experience the future of online shopping by visiting our live demo [here](https://q8-shop.netlify.app/). Explore vast collection and discover the convenience of secure authentication and seamless payments.
+Experience the future of online shopping by visiting live demo [here](https://q8-shop.netlify.app/). Explore vast collection and discover the convenience of secure authentication and seamless payments.
 
-Welcome to the future of online shopping with our advanced E-commerce Shop. From hassle-free logins to secure payments, we've created an immersive shopping experience for you. Dive into the world of modern e-commerce now!
+Welcome to the future of online shopping with advanced E-commerce Shop. From hassle-free logins to secure payments, we've created an immersive shopping experience for you. Dive into the world of modern e-commerce now!
 
